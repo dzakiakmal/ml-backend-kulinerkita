@@ -150,4 +150,5 @@ def predict():
         return jsonify({"error": f"{error}"}), 400
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=8080)
+    # Menjalankan Flask dengan host 0.0.0.0 dan port yang diambil dari environment variable
+    app.run(debug=True, host='0.0.0.0', port=int(os.getenv("PORT", 8080)))
